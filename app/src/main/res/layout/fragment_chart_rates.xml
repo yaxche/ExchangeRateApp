@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.jaimeyaxchealmazanpardo.exchangerateapp.viewmodels.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragments.ChartRatesFragment"
+        android:layout_margin="8dp">
+
+
+        <TextView
+            android:id="@+id/tv_start_date"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="@string/start_date"
+            android:text="@{viewmodel.starDateLiveData}"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_end_date"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/top_guideline"
+            app:drawableLeftCompat="@drawable/ic_calendar" />
+
+        <TextView
+            android:id="@+id/tv_end_date"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="@string/end_date"
+            android:text="@{viewmodel.endDateLiveData}"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toEndOf="@id/tv_start_date"
+            app:layout_constraintEnd_toStartOf="@id/tv_exchange_rate"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/top_guideline"
+            app:drawableLeftCompat="@drawable/ic_calendar" />
+
+        <TextView
+            android:id="@+id/tv_exchange_rate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="@string/currency"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toEndOf="@id/tv_end_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/top_guideline"
+            app:drawableLeftCompat="@drawable/ic_rate" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.06" />
+
+            <ProgressBar
+                android:id="@+id/loading_data_progressbar"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/top_guideline"
+                app:layout_constraintBottom_toTopOf="@id/middle_guideline"/>
+
+            <com.yabu.livechart.view.LiveChart
+                android:id="@+id/chart_rates"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/top_guideline"
+                app:layout_constraintBottom_toTopOf="@id/middle_guideline"/>
+
+            <TextView
+                android:id="@+id/tv_instructions_single_date_currency"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:hint="@string/instructions"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/top_guideline"
+                app:layout_constraintBottom_toTopOf="@id/middle_guideline"
+                style="?android:textAppearanceSmall"/>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/middle_guideline"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.5"/>
+
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amount_lbl"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/middle_guideline"
+            app:drawableLeftCompat="@drawable/ic_money"
+            style="?android:textAppearanceLarge"/>
+
+        <TextView
+            android:id="@+id/tv_date_in_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_in_time_lbl"
+            android:textColor="@color/black"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_amount"
+            app:drawableLeftCompat="@drawable/ic_today"
+            style="?android:textAppearanceLarge"/>
+
+        <TextView
+            android:id="@+id/tv_exchange_rate_in_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="@string/currency_in_time_lbl"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_date_in_time"
+            app:drawableLeftCompat="@drawable/ic_chart"
+            style="?android:textAppearanceLarge"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

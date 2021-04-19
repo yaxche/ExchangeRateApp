@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">ExchangeRateApp</string>
+    <string name="app_title">Historical Exchange rates</string>
+    <string name="instructions">1. Select a range of dates \n 2. Select a currency exchange (Default: EUR-USD) \n 3. Touch the graph for get data per day in time</string>
+    <string name="end_date">End Date</string>
+    <string name="currency">Currency</string>
+    <string name="start_date">Start Date</string>
+    <string name="amount">Amount: 1 %1$s</string>
+    <string name="amount_lbl">Amount:</string>
+    <string name="date_in_time">Date in time: %1$s</string>
+    <string name="currency_in_time">Currency in time: %1$f %2$s</string>
+    <string name="date_in_time_lbl">Date in time:</string>
+    <string name="currency_in_time_lbl">Currency in time:</string>
+    <string name="singleDay_currency">In %1$s exchange currency was %2$f</string>
+    <string name="select_range_date">Select A Date Range</string>
+    <string name="error_occured">An error occured. Please try again</string>
+    <string name="not_network_available">Not Network Available</string>
+    <string name="error_network">Network is not available</string>
+    <string name="select_exchange_rate">Select exchange rate</string>
+    <string-array name="rates">
+        <item>EUR</item>
+        <item>USD</item>
+    </string-array>
+    <string-array name="currency_exchange">
+        <item>EUR-USD</item>
+        <item>USD-EUR</item>
+    </string-array>
+</resources>

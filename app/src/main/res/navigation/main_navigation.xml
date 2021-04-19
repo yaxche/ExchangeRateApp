@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/chartRatesFragment">
+
+    <fragment
+        android:id="@+id/chartRatesFragment"
+        android:name="com.jaimeyaxchealmazanpardo.exchangerateapp.view.fragments.ChartRatesFragment"
+        android:label="@string/app_title"
+        tools:layout="@layout/fragment_chart_rates" />
+</navigation>

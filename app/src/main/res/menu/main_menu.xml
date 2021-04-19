@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/add_range_dates"
+        android:title="Add Range Dates"
+        android:icon="@drawable/ic_date_range"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/exchange_rates"
+        android:title="Exchange Rates"
+        android:icon="@drawable/ic_exchage_rate"
+        app:showAsAction="always"/>
+</menu>
